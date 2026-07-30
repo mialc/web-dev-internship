@@ -7,6 +7,8 @@ resourceGrid.innerHTML = ""; // clear out whatever was there before re-rendering
   resources.forEach(function (resource) 
   {
     const card = document.createElement("article");
+    card.dataset.url = resource.url;
+    // add a data attribute to store the resource's URL
     card.innerHTML = `
       <h3>${resource.title}</h3>
       <p>${resource.topic}</p>
