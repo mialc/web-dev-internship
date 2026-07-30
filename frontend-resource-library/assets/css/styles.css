@@ -38,6 +38,46 @@ header h1 {
   outline-offset: 1px;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem auto 0;
+}
+
+#topicFilter,
+#difficultyFilter {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #714c6b;
+}
+
+#topicFilter:focus,
+#difficultyFilter:focus,
+#resetFilters:focus {
+  outline: 2px solid #a77a9f;
+  outline-offset: 1px;
+}
+
+#resetFilters {
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #a77a9f;
+  border-radius: 8px;
+  background: #fff;
+  color: #a77a9f;
+  cursor: pointer;
+}
+
+#resetFilters:hover {
+  background: #a77a9f;
+  color: #fff;
+}
+
 #statusMessage {
   text-align: center;
   color: #6b7280;

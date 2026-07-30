@@ -15,6 +15,27 @@
     </header>
     <input type="text" id="searchInput" placeholder="Search resources...">
     
+    <!-- filters -->
+        <div class="filters">
+        <select id="topicFilter">
+          <option value="All">All Topics</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Cloud Development">Cloud Development</option>
+          <option value="WordPress Development">WordPress Development</option>
+          <option value="Accessibility">Accessibility</option>
+        </select>
+
+        <select id="difficultyFilter">
+          <option value="All">All Difficulties</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+
+        <button type="button" id="resetFilters">Reset</button>
+        </div>
+
     <p id="statusMessage">Loading resources...</p>
     <div id="resourceGrid"></div>
 
