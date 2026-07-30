@@ -2,9 +2,9 @@ import { getResources } from "./api.js"
 import { renderResources } from "./render.js"
 import { searchResources } from "./filters.js"
 const statusMessage = document.querySelector("#statusMessage");
+const searchInput = document.querySelector("#searchInput");
 
 let allResources = [];
-const searchInput = document.querySelector("#searchInput");
 
 searchInput.addEventListener('input', function () 
 {
