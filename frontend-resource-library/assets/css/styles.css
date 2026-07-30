@@ -109,6 +109,7 @@ header h1 {
 #resourceGrid article:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+  color: #9b6d94;
 }
 
 #resourceGrid article h3 {
