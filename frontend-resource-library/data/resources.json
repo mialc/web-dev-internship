@@ -1,0 +1,131 @@
+[
+  {
+    "id": "mdn-js-guide",
+    "title": "MDN JavaScript Guide",
+    "topic": "JavaScript",
+    "description": "A comprehensive JavaScript learning guide from MDN.",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+    "difficulty": "Beginner"
+  },
+  {
+    "id": "free-code-camp",
+    "title": "FreeCodeCamp",
+    "topic": "Web Development",
+    "description": "An open-source community for learning web development.",
+    "url": "https://www.freecodecamp.org/",
+    "difficulty": "Beginner"
+  },
+    {
+        "id": "javascript30",
+        "title": "JavaScript 30",
+        "topic": "JavaScript",
+        "description": "A 30-day challenge to build 30 things with vanilla JS.",
+        "url": "https://javascript30.com/",
+        "difficulty": "Intermediate"
+    },
+    {
+        "id": "the-odin-project",
+        "title": "The Odin Project",
+        "topic": "Web Development",
+        "description": "A free full-stack curriculum for web development.",
+        "url": "https://www.theodinproject.com/",
+        "difficulty": "Beginner"
+    },
+    {
+        "id": "frontendmasters",
+        "title": "Frontend Masters",
+        "topic": "Web Development",
+        "description": "Advanced web development courses and workshops.",
+        "url": "https://frontendmasters.com/",
+        "difficulty": "Advanced"
+    },
+    {
+        "id": "aws-certified-developer",
+        "title": "AWS Certified Developer - Associate",
+        "topic": "Cloud Development",
+        "description": "A certification for developers working with AWS services.",
+        "url": "https://www.freecodecamp.org/news/pass-the-aws-certified-solutions-architect-associate-certification/",
+        "difficulty": "Advanced"
+    },
+    {
+        "id": "aws-skills-builder",
+        "title": "AWS Skills Builder",
+        "topic": "Cloud Development",
+        "description": "A platform to learn and practice AWS skills.",
+        "url": "https://skillbuilder.aws/category/getstarted",
+        "difficulty": "Beginner"
+    },
+    {
+        "id": "aws-developer-center",
+        "title": "AWS Developer Center",
+        "topic": "Cloud Development",
+        "description": "Resources and documentation for AWS developers.",
+        "url": "https://aws.amazon.com/free/",
+        "difficulty": "Beginner"
+    },
+    {
+        "id": "aws-restart",
+        "title": "AWS re/Start",
+        "topic": "Cloud Development", 
+        "description": "A full-time, classroom-based training program that prepares individuals for careers in cloud computing.",
+        "url": "https://aws.amazon.com/training/restart/",
+        "difficulty": "Beginner"
+    },
+    {
+        "id": "wordpress-api-handbook",
+        "title": "WordPress REST API Handbook",
+        "topic": "WordPress Development",
+        "description": "Official documentation for the WordPress REST API.",
+        "url": "https://developer.wordpress.org/rest-api/",
+        "difficulty": "Intermediate"
+    },
+    {
+        "id": "wordpress-js-coding-standards",
+        "title": "WordPress JavaScript Coding Standards",
+        "topic": "WordPress Development",
+        "description": "Guidelines for writing JavaScript code for WordPress.",
+        "url": "https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/",
+        "difficulty": "Intermediate"
+    },
+    {
+        "id": "wordpress-php-coding-standards",
+        "title": "WordPress PHP Coding Standards",
+        "topic": "WordPress Development",
+        "description": "Guidelines for writing PHP code for WordPress.",
+        "url": "https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/",
+        "difficulty": "Intermediate"
+    },
+    {
+        "id": "wordpress-theme-development",
+        "title": "WordPress Theme Development",
+        "topic": "WordPress Development",
+        "description": "A guide to developing themes for WordPress.",
+        "url": "https://developer.wordpress.org/block-editor/",
+        "difficulty": "Intermediate"
+    },
+    {
+        "id": "mdn-accessibility",
+        "title": "MDN Accessibility Guide",
+        "topic": "Accessibility",
+        "description": "A guide to web accessibility from MDN.",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn/Accessibility",
+        "difficulty": "Beginner"
+    },
+    {
+        "id": "a11y-project",  
+        "title": "The A11Y Project",
+        "topic": "Accessibility",
+        "description": "A community-driven effort to make web accessibility easier.",
+        "url": "https://www.a11yproject.com/",
+        "difficulty": "Beginner"
+    },
+    {
+        "id": "web-aim",
+        "title": "WebAIM",
+        "topic": "Accessibility",
+        "description": "Web Accessibility In Mind - resources and training for web accessibility.",
+        "url": "https://webaim.org/",
+        "difficulty": "Intermediate"
+    }
+
+]

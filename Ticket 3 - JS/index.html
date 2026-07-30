@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mia Carrillo | Front-End Web Developer</title>
+    <meta name="description" content="Mia Carrillo — Front-End Web Developer and IT student at UCF. Solo founder of the live iOS app Recru. Portfolio showcasing HTML, CSS, JavaScript, Bootstrap, and WordPress projects.">
+    <meta property="og:title" content="Mia Carrillo | Front-End Web Developer">
+    <meta property="og:description" content="Front-End Web Developer who shipped a live iOS app as solo founder of Recru, building responsive, accessible websites.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23263826'/%3E%3Ctext x='50' y='66' font-size='44' font-family='monospace' fill='%23a28072' text-anchor='middle'%3EMC%3C/text%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+
+            <div class="container">
+                    <a class="navbar-brand fw-bold text-white" href="#hero">Mia Carrillo</a>
+                    <!-- .menu-toggle is the button main.js selects, click toggles the menu  -->
+                    <button class="navbar-toggler border-white menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <!-- .nav-menu is the menu main.js toggles "show" on to open/close -->
+                <div class="collapse navbar-collapse nav-menu" id="navbarNav">
+                    
+                    <ul class="navbar-nav ms-auto gap-3 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                        <li class="nav-item nav-actions d-flex align-items-center gap-3">
+                            <a class="nav-link nav-link-action text-white" href="https://github.com/mialc" target="_blank" rel="noopener">GitHub</a>
+                            <a class="nav-link nav-link-action text-white" href="assets/resume/Mia-Carrillo-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+                        </li>
+                        <button id="theme-toggle" class="btn btn-sm ms-3 theme-toggle-btn">◐</button>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+
+
+            <section class="hero py-5" id="hero">
+            <div class="container">
+            
+               <p class="hero-kicker">&gt; whoami</p>
+               <h2>Hi, I'm Mia Carrillo — Front-End Web Developer</h2>
+               <p>IT student who's shipped a live iOS app as solo founder of Recru, and builds responsive websites with HTML, CSS, Bootstrap, and JavaScript.</p>
+               <div class="hero-cta">
+                   <a href="#projects">View My Projects</a>
+                   <a href="assets/resume/Mia-Carrillo-Resume.pdf" target="_blank" rel="noopener" class="hero-cta-secondary">View Resume</a>
+               </div>
+               <!-- .focus-btn click fills in the focus text -->
+               <button type="button" class="focus-btn">Show My Current Focus</button>
+
+               <!-- same thing for .focus-text it starts empty -->
+               <p class="focus-text" id="focus-text"></p>
+
+            </div>
+                <button class="scroll-btn" data-scroll-target="about">↓</button>
+            </section>
+
+            <div class="section-blend blend-hero-about" aria-hidden="true"></div>
+
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row g-5">
+
+                        <div class="col-lg-5 d-flex flex-column align-items-center justify-content-center text-center">
+                            <img src="assets/images/Headshot.jpg" alt="Mia Carrillo headshot" class="about-photo mb-4">
+                            <h2 class="text-white fw-bold mb-2">Mia Carrillo</h2>
+                            <p class="about-subtitle mb-3">IT Student @ UCF · Front-End Developer · Founder & Developer, Recru</p>
+                            <p class="about-bio text-white">
+                                I'm an IT student at UCF who builds things that look great and work even better. I designed, built, and launched Recru — a live iOS app — solo, and I'm now building responsive, accessible websites with HTML, CSS, Bootstrap, and JavaScript through a front-end internship at U.S. Hunger.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-7 d-flex align-items-center">
+                            <div class="timeline w-100">
+                                <div class="timeline-item active">
+                                    <span class="timeline-date">2026 – Present</span>
+                                    <h4>Front-End Web Dev Intern</h4>
+                                    <p>U.S. Hunger — Building real web projects using HTML, CSS, Bootstrap, and WordPress.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2025 – Present</span>
+                                    <h4>Founder & Developer — Recru</h4>
+                                    <p>Solo-built and launched a live iOS app on the App Store for Greek life recruitment.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2025 – Present</span>
+                                    <h4>VP of Recruitment, UCF Panhellenic</h4>
+                                    <p>Led formal recruitment for 800–900 PNMs across 12 chapters.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-date">2025</span>
+                                    <h4>Software Engineering Intern, Zuleris Interactive</h4>
+                                    <p>Built interactive UI systems using Unity and C#.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="scroll-btn" data-scroll-target="skills">↓</button>
+            </section>
+
+            <div class="section-blend blend-about-skills" aria-hidden="true"></div>
+
+            <section class="skills" id="skills">
+                <h2>Skills</h2>
+            <!-- main.js grabs every .card in here and adds "in-view" as it scrolls in so it fades-in -->
+            <div class="row row-cols-1 row-cols-md-2 g-4 skills-grid">
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Design & Prototyping</h5>
+                            <p class="card-text">User-centered product design using Figma and Unity UI Toolkit. I create wireframes, high-fidelity prototypes, interaction flows, and conduct user interviews and usability testing to iterate toward accessible, usable interfaces.</p>
+                            <p class="card-text"><small class="text-body-secondary">Tools: Figma · Miro · Unity UI · Prototyping</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Technical</h5>
+                            <p class="card-text">Front-end fundamentals: semantic HTML, modern CSS (Flexbox & Grid), Bootstrap, responsive design, JavaScript, and accessibility best practices. Comfortable with version control (Git/GitHub) and development in VS Code.</p>
+                            <p class="card-text"><small class="text-body-secondary">Languages & Tools: HTML · CSS · JS · Bootstrap · Git · VS Code</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Product & Project Management</h5>
+                            <p class="card-text">Practical experience running sprints, prioritizing features, coordinating stakeholders, and maintaining clear communication across teams to deliver iterative product improvements on time.</p>
+                            <p class="card-text"><small class="text-body-secondary">Practices: Agile · Roadmapping · Sprint Planning</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">WordPress Prep</h5>
+                            <p class="card-text">Familiar with WordPress theme anatomy, template hierarchy, block-based styling, and creating reusable components to convert static designs into dynamic, maintainable themes. Developing themes with PHP and deploying sites on AWS.</p>
+                            <p class="card-text"><small class="text-body-secondary">Focus: Themes · PHP · AWS · Block Styling</small></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="scroll-btn" data-scroll-target="projects">↓</button>
+            </section>
+
+            <div class="section-blend blend-skills-projects" aria-hidden="true"></div>
+
+            <section class="projects" id="projects">
+                    <h2>Projects</h2>
+
+            <!-- grabs every .project-card in here and adds "in-view" as it scrolls in same fade-in -->
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Recru — Founder & Developer</h3>
+                    <p>Designed and launched a mobile-first recruitment companion app for Greek life, using Expo, React Native, and Firebase. Built structured notes, chapter filtering, user personalization, and custom theme support. Onboarded early adopters, supported live users, and scaled the app to new campuses across the U.S.</p>
+                    <p class="project-skills">Mobile UX/UI Design, Expo, React Native, Firebase, App Store Connect, TestFlight</p>
+                    <div class="project-actions">
+                        <a href="https://apps.apple.com/us/app/recru/id6769208783" target="_blank" rel="noopener">View on App Store</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Nonprofit Homepage Mockup</h3>
+                    <p>Built a responsive nonprofit landing page with modern web best practices, clean visual hierarchy, and accessible interactions. Used semantic HTML5, CSS Grid, and Flexbox for mobile-first layouts. Includes a polished hero, program cards with hover effects, and an inclusive contact form with ARIA labels.</p>
+                    <p class="project-skills">HTML, CSS, Grid, Flexbox, Responsive Design, Accessibility, Semantic HTML</p>
+                    <div class="project-actions">
+                        <a href="https://mialc.github.io/nonprofit-landing-mockup/" target="_blank" rel="noopener">View Live Site</a>
+                        <a href="https://github.com/mialc/nonprofit-landing-mockup" target="_blank" rel="noopener">View Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Android Minesweeper</h3>
+                    <p>Built a fully playable Minesweeper game for Android in Java, handling grid generation, recursive tile reveal, flagging, win/loss detection, and game-state logic from scratch.</p>
+                    <p class="project-skills">Java, Android Studio, Game Logic, UI Layouts</p>
+                    <div class="project-actions">
+                        <a href="https://github.com/mialc/android-minesweeper-game" target="_blank" rel="noopener">View Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Uhustle — Student Opportunity Hub</h3>
+                    <p>Designed an iOS prototype that gives students a single feed for gigs, jobs, clubs, and campus events, with one-tap redirects to the right app or form instead of competing with Instagram and LinkedIn for attention.</p>
+                    <p class="project-skills">Figma, Mobile UX/UI Design, Auto Layout, Prototyping</p>
+                    <div class="project-actions">
+                        <a href="https://www.figma.com/design/ap5YHXlfq4FHcYbN5Eoubj/Uhustle-Protype?node-id=0-1" target="_blank" rel="noopener">View in Figma</a>
+                        <a href="https://github.com/mialc/Uhustle" target="_blank" rel="noopener">View Code</a>
+                    </div>
+                </div>
+            </div>
+            <button class="scroll-btn" data-scroll-target="faq">↓</button>
+            </section>
+
+            <div class="section-blend blend-projects-faq" aria-hidden="true"></div>
+
+            <section class="faq" id="faq">
+                <div class="container">
+                    <h2>FAQ</h2>
+                    <!-- grabs all .faq-question loops them and click toggles "show" on .faq-answer -->
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <!-- .faq-question is what the click listener is on -->
+                            <button type="button" class="faq-question">What am I learning as a front-end developer?</button>
+                            <!-- .faq-answer is nextElementSibling so "show" gets toggled here to open/close -->
+                            <p class="faq-answer">I'm learning HTML, CSS, Bootstrap, and now JavaScript, with a focus on building responsive, accessible interfaces and getting ready for WordPress theme work.</p>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">What projects have I built so far?</button>
+                            <p class="faq-answer">I've built the Recru iOS app, a nonprofit landing page mockup, an Android Minesweeper game, and the Uhustle prototype. You can see all of them in the Projects section above.</p>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">What am I learning next?</button>
+                            <p class="faq-answer">Next I'm finishing up JavaScript fundamentals, then moving into WordPress theme development.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn" data-scroll-target="contact">↓</button>
+            </section>
+
+            <div class="section-blend blend-faq-contact" aria-hidden="true"></div>
+
+            <section class="contact" id="contact">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 mx-auto">
+                            <h2 class="text-white mb-2">Contact Me</h2>
+                            <p class="contact-subtitle text-center mb-4">Have a question or want to work together? Send me a message!</p>
+                            <!-- .contact-form waits for "submit" and then runs preventDefault and crowsers default validation currently -->
+                            <form class="contact-form" id="contact-form" novalidate>
+                                <label for="name">Full Name</label>
+                            
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                                <label for="email">Email Address</label>
+                        
+                                <input type="email" id="email" name="email" placeholder="Your email" required>
+                                <label for="message">Message</label>
+                             
+                                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                                <button type="submit">Send Message</button>
+
+                                <!-- .contact-status will show the error/success message once I impliment it-->
+                                <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn" data-scroll-target="hero">↑</button>
+            </section>
+
+            <footer class="site-footer" id="footer">
+                <div class="container">
+                    <div class="footer-row">
+                        <p class="mb-0">&copy; <span id="footer-year">2025</span> Mia Carrillo. All rights reserved.</p>
+                        <p class="mb-0 footer-tagline">Designed and built using HTML, CSS & Bootstrap.</p>
+                        <div class="d-flex gap-3">
+                            <a href="https://github.com/mialc" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+                            <a href="https://linkedin.com/in/mialcarrillo" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+                            <a href="mailto:miacarrillobusiness@gmail.com" class="footer-link">Email</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+ <!-- defer waits until the html above is loaded first -->
+<script src="js/main.js" defer></script>
+
+</body>
+
+
+
+
+</html>

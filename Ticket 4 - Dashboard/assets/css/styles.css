@@ -1,0 +1,1359 @@
+/* Reset / Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --coffee: #7a4e3c;
+    --camel:  #a28072;
+    --cream:  #f7f3e8;
+    --olive:  #3e5e44;
+    --ebony:  #263826;
+    --timeline-dim: 0.4;
+}
+
+[data-theme="dark"] {
+    --cream: #1a1710;
+    --ebony: #f0e8d8;
+    --coffee: #d4b896;
+    --olive: #1a3020;
+    --timeline-dim: 0.65;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* leaves room above every anchor-jump target so the fixed navbar doesn't sit on top of it -
+   --nav-height is set by main.js to the navbar's real measured height */
+section[id] {
+    scroll-margin-top: calc(var(--nav-height, 56px) + 8px);
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ebony);
+    transition: color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6,.navbar-brand, nav a {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.cursor-glow {
+    position: fixed;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(62, 94, 68, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    mix-blend-mode: multiply;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+footer {
+    min-height: unset !important;
+    display: block !important;
+}
+
+/* Section-boundary blends: a dedicated strip BETWEEN sections, not inside
+   them, so each section shows only its own color while it fills the
+   viewport — the blend only appears while scrolling through the gap. */
+.section-blend {
+    height: 160px;
+    width: 100%;
+}
+
+.blend-hero-about {
+    background: linear-gradient(to bottom, var(--cream), var(--ebony));
+}
+
+.blend-about-skills {
+    background: linear-gradient(to bottom, var(--ebony), var(--ebony));
+}
+
+.blend-skills-projects {
+    background: linear-gradient(to bottom, #1a2a1a, var(--cream));
+}
+
+.blend-projects-faq {
+    background: linear-gradient(to bottom, var(--cream), var(--cream));
+}
+
+.blend-faq-contact {
+    background: linear-gradient(to bottom, var(--cream), var(--ebony));
+}
+
+[data-theme="dark"] .blend-hero-about {
+    background: linear-gradient(to bottom, var(--cream), #111810);
+}
+
+[data-theme="dark"] .blend-about-skills {
+    background: linear-gradient(to bottom, #111810, #0e1510);
+}
+
+[data-theme="dark"] .blend-skills-projects {
+    background: linear-gradient(to bottom, #0a1208, var(--cream));
+}
+
+[data-theme="dark"] .blend-projects-faq {
+    background: linear-gradient(to bottom, var(--cream), var(--cream));
+}
+
+[data-theme="dark"] .blend-faq-contact {
+    background: linear-gradient(to bottom, var(--cream), #0e1510);
+}
+
+/* Nav */
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 24px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: var(--cream);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--camel) !important;
+    font-weight: 600;
+}
+
+#main-nav {
+    background-color: var(--ebony);
+    transition: background-color 0.4s ease;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.nav-actions {
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-link-action {
+    opacity: 0.75;
+    font-size: 0.92rem;
+}
+
+.nav-link-action:hover {
+    opacity: 1;
+}
+
+.theme-toggle-btn {
+    color: white;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus,
+.theme-toggle-btn:active,
+.theme-toggle-btn:focus-visible {
+    color: white;
+    background: transparent;
+    border: none;
+    box-shadow: none !important;
+    outline: none;
+    opacity: 1;
+}
+
+/* Hero */
+.hero {
+    padding: 80px 40px;
+    background-color: var(--cream);
+    background-image: radial-gradient(circle, rgba(122, 78, 60, 0.15) 1.5px, transparent 1px);
+    background-size: 24px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(122, 78, 60, 0.55) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(122, 78, 60, 0.55) 1px, transparent 1px);
+    background-size: 32px 32px;
+    -webkit-mask-image: radial-gradient(circle 240px at var(--mx, 50%) var(--my, 50%), black 0%, transparent 75%);
+    mask-image: radial-gradient(circle 240px at var(--mx, 50%) var(--my, 50%), black 0%, transparent 75%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero:hover::after {
+    opacity: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero .hero-kicker {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--camel);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: var(--ebony);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--coffee);
+    margin-bottom: 24px;
+    max-width: 600px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--coffee);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: var(--ebony);
+}
+
+.hero a.hero-cta-secondary {
+    background-color: transparent;
+    color: var(--coffee);
+    border: 2px solid var(--coffee);
+}
+
+.hero a.hero-cta-secondary:hover {
+    background-color: var(--coffee);
+    color: #ffffff;
+}
+
+.focus-btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--olive);
+    color: var(--olive);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.focus-btn:hover {
+    background-color: var(--olive);
+    color: #ffffff;
+}
+
+.focus-text {
+    margin-top: 16px;
+    color: var(--olive);
+    font-weight: bold;
+    max-width: 600px;
+}
+
+/* About */
+.about {
+    padding: 100px 40px;
+    background-color: var(--ebony);
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: var(--cream) !important;
+}
+
+.about-subtitle {
+    color: var(--camel) !important;
+    font-size: 0.9rem;
+}
+
+.about p {
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.8;
+}
+
+.about-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffffff50;
+}
+
+/* Timeline */
+.timeline {
+    border-left: 3px solid var(--coffee);
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.timeline-item {
+    position: relative;
+    opacity: var(--timeline-dim);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--coffee);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: var(--camel);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-item h4 {
+    color: #f0e8d8;
+    margin: 4px 0;
+    font-size: 1rem;
+}
+
+.timeline-item p {
+    color: var(--camel);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-item.active::before {
+    background-color: var(--camel);
+    transform: scale(1.4);
+}
+
+.timeline-item.active .timeline-date {
+    color: #f0e8d8;
+}
+
+.timeline-item:hover {
+    opacity: 1;
+    transform: translateX(8px);
+}
+
+.timeline-item:hover::before {
+    background-color: var(--camel);
+    transform: scale(1.4);
+}
+
+.timeline-item:hover .timeline-date {
+    color: #f0e8d8;
+}
+
+.timeline-item:hover h4 {
+    color: #f0e8d8;
+}
+
+/* Skills */
+.skills {
+    padding: 80px 40px;
+    background:
+        radial-gradient(circle, rgba(192, 138, 85, 0.07) 1px, transparent 1px),
+        linear-gradient(135deg, var(--ebony) 0%, #1a2a1a 100%);
+    background-size: 24px 24px, 100% 100%;
+}
+
+.skills h2 {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+    color: var(--cream);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    letter-spacing: 1px;
+    align-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid var(--camel);
+    animation:
+        skills-type 0.8s steps(8) 0.3s forwards,
+        skills-cursor 0.7s step-end 0.3s infinite;
+}
+
+.skills h2::before {
+    content: '> ';
+    color: var(--camel);
+}
+
+@keyframes skills-type {
+    to { width: calc(8ch + 8px); }
+}
+
+@keyframes skills-cursor {
+    0%, 100% { border-color: var(--camel); }
+    50%       { border-color: transparent; }
+}
+
+.skills-grid {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* min-height (not height) so the card can grow taller when it needs to -
+   e.g. in admin mode, once the Edit/Delete buttons add extra content */
+.skills-grid .col {
+    min-height: 220px;
+}
+
+/* Bootstrap card overrides inside skills */
+.skills .card {
+    background: linear-gradient(135deg, rgba(192, 138, 85, 0.08) 0%, rgba(62, 94, 68, 0.25) 100%);
+    border: 2px solid var(--camel);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(122, 78, 60, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, color 0.3s ease;
+    overflow: hidden;
+    color: var(--cream);
+    position: relative;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.skills .card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(192, 138, 85, 0.14), transparent);
+    pointer-events: none;
+}
+
+.skills .card:hover {
+    box-shadow: 0 8px 32px rgba(192, 138, 85, 0.25);
+    transform: translateY(-6px);
+}
+
+.skills .card:hover::after {
+    left: 100%;
+    transition: left 0.5s ease;
+}
+
+.skills .card-body {
+    background: transparent;
+}
+
+.skills .card-title {
+    color: var(--camel);
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+}
+
+.skills .card-text {
+    color: var(--cream);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.skills .text-body-secondary {
+    color: var(--camel) !important;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.78rem !important;
+}
+
+/* Projects */
+.projects {
+    padding: 80px 40px;
+    background-color: var(--cream);
+}
+
+.projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+    color: var(--ebony);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    letter-spacing: 1px;
+    align-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid var(--camel);
+    animation:
+        projects-type 0.8s steps(10) 0.3s forwards,
+        skills-cursor 0.7s step-end 0.3s infinite;
+}
+
+.projects h2::before {
+    content: '> ';
+    color: var(--camel);
+}
+
+@keyframes projects-type {
+    to { width: calc(10ch + 10px); }
+}
+
+
+/* FAQ */
+.faq {
+    padding: 96px 40px;
+    background-color: var(--cream);
+}
+
+.faq-subtitle {
+    text-align: center;
+    color: var(--coffee);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.faq h2 {
+    font-size: 1.8rem;
+    margin: 0 auto 32px;
+    color: var(--ebony);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid var(--camel);
+    animation:
+        faq-type 0.8s steps(5) 0.3s forwards,
+        skills-cursor 0.7s step-end 0.3s infinite;
+}
+
+.faq h2::before {
+    content: '> ';
+    color: var(--camel);
+}
+
+@keyframes faq-type {
+    to { width: calc(5ch + 5px); }
+}
+
+.faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border: 1px solid var(--camel);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--ebony);
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    color: var(--coffee);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 20px 16px;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.faq-answer.show {
+    display: block;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 40px;
+    background-color: var(--ebony);
+    color: #ffffff;
+    align-items: center;
+}
+
+.contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact .row {
+    width: 100%;
+}
+
+.contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    letter-spacing: 1px;
+    margin-inline: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid var(--camel);
+    animation:
+        contact-type 0.8s steps(12) 0.3s forwards,
+        skills-cursor 0.7s step-end 0.3s infinite;
+}
+
+.contact h2::before {
+    content: '> ';
+    color: var(--camel);
+}
+
+@keyframes contact-type {
+    to { width: calc(12ch + 12px); }
+}
+
+.contact p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 500px;
+    margin: 24px auto 0;
+    width: 100%;
+}
+
+.contact-form label {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ffffff80;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff20;
+    color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #ffffff90;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+.contact-form button {
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: var(--ebony);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--cream);
+}
+
+.contact-status {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--camel);
+    min-height: 1.2em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--cream);
+    outline-offset: 2px;
+    background-color: #ffffff30;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--ebony);
+    color: #ffffff;
+    padding: 16px 40px;
+    line-height: 1.5;
+    transition: background-color 0.4s ease;
+}
+
+.site-footer .container {
+    display: block;
+}
+
+.footer-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-row > .d-flex {
+    justify-self: end;
+}
+
+.footer-tagline {
+    color: var(--camel);
+    font-size: 0.8rem;
+    justify-self: center;
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.footer-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    color: #ffffff !important;
+}
+
+/* Scroll Button */
+.scroll-btn {
+    position: sticky;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+    background: transparent;
+    border: 2px solid var(--coffee);
+    color: var(--coffee);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    z-index: 10;
+    animation: scroll-bounce 1.8s ease-in-out infinite, scroll-pulse 2.4s ease-out infinite;
+}
+
+.scroll-btn:hover {
+    background-color: var(--coffee);
+    color: #ffffff;
+    animation-play-state: paused;
+}
+
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+}
+
+@keyframes scroll-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(122, 78, 60, 0.45); }
+    70% { box-shadow: 0 0 0 14px rgba(122, 78, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(122, 78, 60, 0); }
+}
+
+
+/* Dark mode overrides */
+[data-theme="dark"] #main-nav {
+    background-color: #0e1510;
+}
+
+[data-theme="dark"] .about {
+    background-color: #111810;
+}
+
+[data-theme="dark"] .about h2 {
+    color: #f0e8d8 !important;
+}
+
+[data-theme="dark"] .skills {
+    background:
+        radial-gradient(circle, rgba(212, 184, 150, 0.1) 1px, transparent 1px),
+        linear-gradient(135deg, #0e1510 0%, #0a1208 100%);
+    background-size: 24px 24px, 100% 100%;
+}
+
+[data-theme="dark"] .skills h2,
+[data-theme="dark"] .skills .card-text {
+    color: #f0e8d8;
+}
+
+[data-theme="dark"] .dashboard-card {
+    background-color: #221e17;
+    border-color: var(--coffee);
+}
+
+[data-theme="dark"] .dashboard-card .card-description {
+    color: #c0a882;
+}
+
+[data-theme="dark"] .add-project-form input,
+[data-theme="dark"] .add-project-form select,
+[data-theme="dark"] .add-project-form textarea {
+    background-color: #221e17;
+    border-color: var(--coffee);
+    color: #f0e8d8;
+}
+
+[data-theme="dark"] .faq-item {
+    background-color: #221e17;
+    border-color: var(--coffee);
+}
+
+[data-theme="dark"] .faq-question {
+    color: #f0e8d8;
+}
+
+[data-theme="dark"] .faq-answer {
+    color: #c0a882;
+}
+
+[data-theme="dark"] .contact {
+    background-color: #0e1510;
+}
+
+[data-theme="dark"] .site-footer {
+    background-color: #0e1510;
+}
+
+[data-theme="dark"] .hero {
+    background-image: radial-gradient(circle, rgba(212, 184, 150, 0.12) 1.5px, transparent 1px);
+}
+
+[data-theme="dark"] .hero::after {
+    background-image:
+        linear-gradient(rgba(212, 184, 150, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 184, 150, 0.5) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .cursor-glow {
+    background: radial-gradient(circle, rgba(212, 184, 150, 0.18) 0%, transparent 70%);
+    mix-blend-mode: screen;
+}
+
+/* Dark mode button contrast fixes: --coffee/--ebony flip to light colors
+   in dark mode, so hover states relying on white text need a dark bg instead.
+   Uses var(--cream), which flips to a warm near-black in dark mode, to stay
+   on-palette instead of introducing a greenish off-tone. */
+[data-theme="dark"] .hero a,
+[data-theme="dark"] .card-actions a {
+    border: 2px solid transparent;
+}
+
+[data-theme="dark"] .hero a:hover,
+[data-theme="dark"] .card-actions a:hover {
+    background-color: var(--cream);
+    color: #f0e8d8;
+    border-color: #f0e8d8;
+}
+
+[data-theme="dark"] .scroll-btn:hover {
+    color: var(--cream);
+}
+
+[data-theme="dark"] .contact-form button {
+    background-color: #d4b896;
+    color: var(--cream);
+}
+
+[data-theme="dark"] .contact-form button:hover {
+    background-color: #f0e8d8;
+    color: var(--cream);
+}
+
+/* --olive flips near-black in dark mode (fine for hover backgrounds elsewhere),
+   but .focus-btn/.focus-text use it as readable foreground text/border against
+   the also-near-black hero background - so it needs its own lighter shade here */
+[data-theme="dark"] .focus-btn {
+    border-color: #8fae82;
+    color: #8fae82;
+}
+
+[data-theme="dark"] .focus-btn:hover {
+    background-color: #8fae82;
+    color: var(--cream);
+}
+
+[data-theme="dark"] .focus-text {
+    color: #8fae82;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .hero {
+        padding: 48px 24px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .skills-grid .col {
+        height: auto;
+        min-height: 180px;
+    }
+
+    .footer-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .footer-row > .d-flex {
+        justify-self: center;
+    }
+
+    .cursor-glow {
+        display: none;
+    }
+}
+
+/* dashboard */
+.dashboard {
+   padding: 0 40px 64px;
+   background-color: var(--cream);
+}
+
+/* flex + wrap + justify-content:center (instead of CSS grid) so that ANY
+   incomplete last row - whether 1 card or 2 cards short of a full row of 3 -
+   centers itself as a group automatically. Grid can't do this on its own:
+   grid always left-packs a short last row instead of centering it. */
+.dashboard-grid {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+   max-width: 1100px;
+   margin: 0 auto;
+}
+
+.dashboard-card {
+   flex: 1 1 300px;
+   max-width: 350px;
+   background-color: #ffffff;
+   padding: 18px;
+   border: 1px solid var(--camel);
+   border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   text-align: center;
+   transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dashboard-card:hover {
+   box-shadow: 0 6px 24px rgba(196, 98, 46, 0.18);
+   transform: translateY(-4px);
+}
+
+.dashboard-card h3 {
+   font-size: 1.15rem;
+   color: var(--ebony);
+}
+
+.dashboard-card .card-category,
+.dashboard-card .card-status {
+   font-size: 0.82rem;
+   color: var(--coffee);
+   font-weight: bold;
+   font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.dashboard-card .card-description {
+   font-size: 0.95rem;
+   color: #555;
+   line-height: 1.55;
+}
+
+.dashboard-card .card-skills {
+   font-size: 0.82rem;
+   color: var(--coffee);
+   font-weight: bold;
+   font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.card-actions {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 10px;
+}
+
+.card-actions a {
+   display: inline-block;
+   padding: 8px 16px;
+   background-color: var(--coffee);
+   color: #ffffff;
+   text-decoration: none;
+   border-radius: 6px;
+   font-size: 0.9rem;
+   white-space: nowrap;
+   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.card-actions a:hover {
+   background-color: var(--ebony);
+}
+
+.card-admin-actions {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+
+.edit-btn {
+   padding: 6px 16px;
+   background-color: transparent;
+   color: var(--coffee);
+   border: 1px solid var(--coffee);
+   border-radius: 6px;
+   font-size: 0.8rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn:hover {
+   background-color: var(--coffee);
+   color: #ffffff;
+}
+
+.delete-btn {
+   padding: 6px 16px;
+   background-color: transparent;
+   color: #b3392c;
+   border: 1px solid #b3392c;
+   border-radius: 6px;
+   font-size: 0.8rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-btn:hover {
+   background-color: #b3392c;
+   color: #ffffff;
+}
+
+.form-divider {
+   width: 100%;
+   border: none;
+   border-top: 1px solid var(--camel);
+   margin: 12px 0 4px;
+}
+
+/* deliberately styled to look risky (red, warning icon) and kept spaced away
+   from the other form buttons, so it's never a stray/accidental click */
+.danger-btn {
+   align-self: center;
+   padding: 8px 20px;
+   background-color: transparent;
+   color: #b3392c;
+   border: 1px solid #b3392c;
+   border-radius: 6px;
+   font-size: 0.85rem;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.danger-btn:hover {
+   background-color: #b3392c;
+   color: #ffffff;
+}
+
+.danger-hint {
+   text-align: center;
+   font-size: 0.78rem;
+   color: #8a8a8a;
+   max-width: 380px;
+   margin: 0 auto;
+}
+
+.dashboard-search {
+   display: block;
+   width: 100%;
+   max-width: 400px;
+   margin: 0 auto 32px;
+   padding: 10px 16px;
+   border: 1px solid var(--camel);
+   border-radius: 6px;
+   font-size: 0.9rem;
+}
+
+.dashboard-filters {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+   justify-content: center;
+   margin-bottom: 32px;
+}
+
+.filter-btn {
+   padding: 8px 18px;
+   border: 1px solid var(--camel);
+   background: transparent;
+   color: var(--coffee);
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 0.9rem;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn.active {
+   background-color: var(--coffee);
+   color: #ffffff;
+}
+
+.dashboard-sort {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 32px;
+   font-size: 0.9rem;
+   color: var(--coffee);
+}
+
+.dashboard-sort select {
+   padding: 8px 14px;
+   border: 1px solid var(--camel);
+   border-radius: 6px;
+   background: transparent;
+   color: var(--coffee);
+   font-size: 0.9rem;
+   cursor: pointer;
+}
+
+.dashboard-sort select:focus {
+   outline: 2px solid var(--coffee);
+   outline-offset: 2px;
+}
+
+.add-project-form {
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+   max-width: 500px;
+   margin: 32px auto 0;
+}
+
+.add-project-form h3 {
+   text-align: center;
+   margin-bottom: 4px;
+   color: var(--ebony);
+   font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.add-project-form label {
+   font-size: 0.85rem;
+   color: var(--coffee);
+   font-weight: bold;
+}
+
+.add-project-form input,
+.add-project-form select,
+.add-project-form textarea {
+   padding: 10px 14px;
+   border: 1px solid var(--camel);
+   border-radius: 6px;
+   font-size: 0.9rem;
+   font-family: inherit;
+   background-color: #ffffff;
+   color: var(--ebony);
+}
+
+.add-project-form textarea {
+   min-height: 100px;
+   resize: vertical;
+}
+
+.add-project-form input:focus,
+.add-project-form select:focus,
+.add-project-form textarea:focus {
+   outline: 2px solid var(--coffee);
+   outline-offset: 2px;
+}
+
+.add-project-form button {
+   padding: 10px 24px;
+   background-color: var(--coffee);
+   color: #ffffff;
+   border: none;
+   border-radius: 6px;
+   font-weight: bold;
+   font-size: 0.9rem;
+   cursor: pointer;
+   align-self: center;
+   transition: background-color 0.3s ease;
+}
+
+.add-project-form button:hover {
+   background-color: var(--ebony);
+}
+
+.form-status {
+   text-align: center;
+   font-size: 0.85rem;
+   color: var(--coffee);
+   min-height: 1.2em;
+}
+
+/* used by project.js to show/hide the add-project form behind the passcode */
+.hidden {
+   display: none !important;
+}
+
+/* the actual unlock trigger is now #secretUnlockTrigger in the footer (plain
+   text, no styling) - this just makes sure it never accidentally LOOKS
+   clickable, since it's meant to blend in completely */
+#secretUnlockTrigger {
+   cursor: default;
+}
+
+/* fixed just below the navbar (using the same --nav-height variable the
+   scroll-margin-top fix uses) so it's visible no matter where on the page
+   you are - unlike the old per-form "Hide Form" button, this one place
+   turns off admin mode everywhere at once */
+.admin-banner {
+   position: fixed;
+   top: var(--nav-height, 56px);
+   left: 0;
+   right: 0;
+   z-index: 998;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 16px;
+   flex-wrap: wrap;
+   padding: 10px 20px;
+   background-color: #b3392c;
+   color: #ffffff;
+   font-size: 0.85rem;
+   text-align: center;
+}
+
+.admin-banner button {
+   padding: 6px 14px;
+   background-color: #ffffff;
+   color: #b3392c;
+   border: none;
+   border-radius: 6px;
+   font-weight: bold;
+   font-size: 0.8rem;
+   cursor: pointer;
+}
+
+/* small and out of the way, next to the focus button - only ever visible
+   while admin mode is on */
+.edit-focus-btn {
+   margin-top: 16px;
+   margin-left: 10px;
+   padding: 6px 14px;
+   background: transparent;
+   border: 1px solid var(--olive);
+   color: var(--olive);
+   border-radius: 6px;
+   font-size: 0.8rem;
+   cursor: pointer;
+}
+
+.edit-focus-btn:hover {
+   background-color: var(--olive);
+   color: #ffffff;
+}
+
+.checkbox-label {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   font-size: 0.85rem;
+   color: var(--coffee);
+   font-weight: bold;
+}
+
+.checkbox-label input {
+   width: auto;
+}
